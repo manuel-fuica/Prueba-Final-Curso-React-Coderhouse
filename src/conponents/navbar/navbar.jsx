@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Cartwidget from '../cartWidget/cartwidget';
-import logo from '../../assets/img/logo-sushi.jpg';
+// import logo from '../../assets/img/logo-sushi.png';
 
 const Navbar = () => {
     return (
@@ -15,16 +15,19 @@ const Navbar = () => {
                 <div className='row'>
                     <ul className='d-flex list-unstyled'>
                         <li className='nav-item me-3'>
-                            <a className='nav-link text-white' href='#'>HOME</a>
+                            <a className='nav-link text-white' href='#'>SUSHIS</a>
                         </li>
                         <li className='nav-item me-3'>
-                            <a className='nav-link text-white' href='#'>MENU</a>
+                            <a className='nav-link text-white' href='#'>GOHANS</a>
                         </li>
                         <li className='nav-item me-3'>
-                            <a className='nav-link text-white' href='#'>AREA DE REPARTO</a>
+                            <a className='nav-link text-white' href='#'>SASHIMIS</a>
                         </li>
                         <li className='nav-item'>
-                            <a className='nav-link text-white' href='#'>CONTACTO</a>
+                            <a className='nav-link text-white' href='#'>CEVICHES</a>
+                        </li>
+                        <li className='nav-item'>
+                            <a className='nav-link text-white' href='#'>APERITIVOS</a>
                         </li>
                         <Cartwidget />
                     </ul>
