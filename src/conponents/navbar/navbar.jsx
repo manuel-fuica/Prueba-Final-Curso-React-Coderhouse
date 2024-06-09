@@ -1,34 +1,37 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Cartwidget from '../cartWidget/cartwidget';
-// import logo from '../../assets/img/logo-sushi.png';
+import logo from '/assets/img/logo-sushi.png';
+import { Link, NavLink } from 'react-router-dom';
+
 
 const Navbar = () => {
     return (
         <header className='mt-5 container'>
         <div className='row'>
             <div className='contenedor-navbar col-6 text-center justify-content-center'>
-                {/* <img src={logo} alt="" className='img-logo'/> */}
-                <h1 className='text-white'>LOGO SUSHI</h1>
+                <Link to='/'>
+                    <img src={logo} alt="logo-sushi" />
+                </Link>
             </div>
             <div className='col-6'>
-                <div className='row'>
+                <div className='row '>
                     <ul className='d-flex list-unstyled'>
-                        <li className='nav-item me-3'>
-                            <a className='nav-link text-white' href='#'>SUSHIS</a>
-                        </li>
-                        <li className='nav-item me-3'>
-                            <a className='nav-link text-white' href='#'>GOHANS</a>
-                        </li>
-                        <li className='nav-item me-3'>
-                            <a className='nav-link text-white' href='#'>SASHIMIS</a>
-                        </li>
-                        <li className='nav-item'>
-                            <a className='nav-link text-white' href='#'>CEVICHES</a>
-                        </li>
-                        <li className='nav-item'>
-                            <a className='nav-link text-white' href='#'>APERITIVOS</a>
-                        </li>
+                        <NavLink to={'/categoria/SUSHIS'} className={({ isActive }) => isActive ? 'active' : ''}>
+                            <li className='nav-item me-3 text-white'>SUSHIS</li>
+                        </NavLink>
+                        <Link to='/categoria/GOHANS'>
+                            <li className='nav-item me-3 text-white'>GOHANS</li>
+                        </Link>
+                        <Link to='/categoria/SASHIMIS'>
+                            <li className='nav-item me-3 text-white'>SASHIMIS</li>
+                        </Link>
+                        <Link to='/categoria/CEVICHES'>
+                            <li className='nav-item me-3 text-white'>CEVICHES</li>
+                        </Link>
+                        <Link to='/categoria/APERITIVOS'>
+                            <li className='nav-item me-3 text-white'>APERITIVOS</li>
+                        </Link>
                         <Cartwidget />
                     </ul>
                 </div>

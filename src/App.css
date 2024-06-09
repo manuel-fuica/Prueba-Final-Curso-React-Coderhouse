@@ -3,9 +3,13 @@ body{
   background-color: #010101 !important;
 }
 
-.img-logo{
-  width: 400px;
-  height: 300px;
+.card-img{
+  width: 600px !important;
+  height: 500px !important;
+}
+
+.active{
+  color: chartreuse !important;
 }
 
 
