@@ -18,20 +18,20 @@ const Navbar = () => {
                 <div className='row '>
                     <ul className='d-flex list-unstyled'>
                         <NavLink to={'/categoria/SUSHIS'} className={({ isActive }) => isActive ? 'active' : ''}>
-                            <li className='nav-item me-3 text-white'>SUSHIS</li>
+                            <li className=' me-3 text-white'>SUSHIS</li>
                         </NavLink>
-                        <Link to='/categoria/GOHANS'>
+                        <NavLink to={'/categoria/GOHANS'} className={({ isActive }) => isActive ? 'active' : ''}>
                             <li className='nav-item me-3 text-white'>GOHANS</li>
-                        </Link>
-                        <Link to='/categoria/SASHIMIS'>
+                        </NavLink>
+                        <NavLink to={'/categoria/SASHIMIS'} className={({ isActive }) => isActive ? 'active' : ''}>
                             <li className='nav-item me-3 text-white'>SASHIMIS</li>
-                        </Link>
-                        <Link to='/categoria/CEVICHES'>
+                        </NavLink>
+                        <NavLink to={'/categoria/CEVICHES'} className={({ isActive }) => isActive ? 'active' : ''}>
                             <li className='nav-item me-3 text-white'>CEVICHES</li>
-                        </Link>
-                        <Link to='/categoria/APERITIVOS'>
+                        </NavLink>
+                        <NavLink to={'/categoria/APERITIVOS'} className={({ isActive }) => isActive ? 'active' : ''}>
                             <li className='nav-item me-3 text-white'>APERITIVOS</li>
-                        </Link>
+                        </NavLink>
                         <Cartwidget />
                     </ul>
                 </div>

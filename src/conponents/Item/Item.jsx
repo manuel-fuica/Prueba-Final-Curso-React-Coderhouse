@@ -9,9 +9,7 @@ export const Item = ({ id, categoria, nombre, descripcion, imagen, precio }) => 
                 <h3 className="">{nombre}</h3>
                 <p className="">{descripcion}</p>
                 <h2 className="">$ {precio}</h2>
-                <button className="btn-card">ver detalle</button>
-                {/* <Link to={`/item/${id}`}>Ver detalle</Link>
-                    <button className="btn-card">ver detalle</button> */}
+                <Link to={`/item/${id}`}>Ver detalle</Link>
             </div>
         </div>
     );

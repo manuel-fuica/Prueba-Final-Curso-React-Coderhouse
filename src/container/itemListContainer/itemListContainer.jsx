@@ -4,25 +4,33 @@ import { getProducts} from '../../data/asyncmock'
 import { useParams } from 'react-router-dom'
 
 const ItemListContainer = () => {
+    const [productos, setProductos] = useState([]);
+    const { idCategoria, id } = useParams();
 
-    const [productos, setProductos] = useState([])
-
-    const {idCategoria} = useParams()
-    console.log("parametros:", idCategoria)
-    
     useEffect(() => {
-        getProducts(idCategoria)
-            .then(res => setProductos(res))
-            .catch(err => console.log(err))
-    }, [idCategoria])
+        const fetchProductos = async () => {
+            try {
+                const listadoProductos = await getProducts(idCategoria);
+                const filtrarProductos = id
+                    ? listadoProductos.filter((unProducto) => unProducto.id === id)
+                    : listadoProductos;
+                setProductos(filtrarProductos);
+            } catch (error) {
+                console.log(error);
+            }
+        };
 
+        fetchProductos();
+    }, [idCategoria, id]);
 
     return (
-        <>  
-            <h1 className='text-white'>{idCategoria ? <>PRODUCTO: { idCategoria}</> : <>CATALOGO DE PRODUCTOS</>}</h1>
-            {productos ? <ItemList productos={productos} /> : <div>Cargando...</div>}    
+        <>
+            <h1 className='text-white'>
+                {idCategoria ? <>PRODUCTO: {idCategoria}</> : <>CATALOGO DE PRODUCTOS</>}
+            </h1>
+            {productos.length > 0 ? <ItemList productos={productos} /> : <div>Cargando...</div>}
         </>
-    )
-}
+    );
+};
 
-export default ItemListContainer
+export default ItemListContainer;
