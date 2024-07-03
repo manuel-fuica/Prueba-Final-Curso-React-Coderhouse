@@ -3,6 +3,7 @@ import { ItemList } from '../../conponents/ItemList/ItemList'
 import { getProducts} from '../../data/asyncmock'
 import { useParams } from 'react-router-dom'
 
+
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
     const { idCategoria, id } = useParams();
@@ -11,10 +12,8 @@ const ItemListContainer = () => {
         const fetchProductos = async () => {
             try {
                 const listadoProductos = await getProducts(idCategoria);
-                const filtrarProductos = id
-                    ? listadoProductos.filter((unProducto) => unProducto.id === id)
-                    : listadoProductos;
-                setProductos(filtrarProductos);
+                
+                setProductos(listadoProductos);
             } catch (error) {
                 console.log(error);
             }
@@ -28,7 +27,7 @@ const ItemListContainer = () => {
             <h1 className='text-white'>
                 {idCategoria ? <>PRODUCTO: {idCategoria}</> : <>CATALOGO DE PRODUCTOS</>}
             </h1>
-            {productos.length > 0 ? <ItemList productos={productos} /> : <div>Cargando...</div>}
+            {productos.length > 0 ? <ItemList productos={productos} /> : <div className='text-white'>Cargando Productos...</div>}
         </>
     );
 };

@@ -12,6 +12,30 @@ body{
   color: chartreuse !important;
 }
 
+.detalle-producto{
+  display: flex;
+  flex-direction: row;
+  padding-left: 150px;
+  padding-right: 50px;
+}
+
+.descripcion{
+  display: flex;
+  flex-direction: column;
+  padding-left: 150px;
+  margin-top: 50px;
+  
+}
+
+.botones{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.btn-eliminar, .btn-agregar{
+  margin-left: 10px;
+}
 
 
 

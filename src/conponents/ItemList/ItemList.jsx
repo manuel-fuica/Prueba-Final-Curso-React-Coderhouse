@@ -4,6 +4,8 @@ import { Item } from "../Item/Item";
 
 export const ItemList = ({ productos }) => {
 
+    console.log(productos)
+
     return (
         
         <div className="contenedor d-flex flex-wrap justify-content-center align-items-center gap-3">
@@ -11,13 +13,14 @@ export const ItemList = ({ productos }) => {
             <Item
                 key={p.id}
                 id={p.id}
-                categoria={p.categoria}
-                nombre={p.nombre}
-                descripcion={p.descripcion}
-                imagen={`${p.imagen}`}
-                precio={p.precio}
+                categoria={p.Categoria}
+                nombre={p.Nombre}
+                descripcion={p.Descripcion}
+                imagen={`../assets/img/${p.Imagen}`}
+                precio={p.Precio}
             />
             ))}
         </div>
+        
         );
 };
