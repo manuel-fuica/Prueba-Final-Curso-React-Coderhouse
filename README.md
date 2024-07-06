@@ -1,4 +1,3 @@
 Proyecto para CoderHouse
-
-Curso FrontEnd con React
-![alt text](ProyectoManuelFuica.gif)
+Desarrollo de Ecomerse
+<video src="/assets/img/proyecto-manuel-fuica.mp4" controls></video>
