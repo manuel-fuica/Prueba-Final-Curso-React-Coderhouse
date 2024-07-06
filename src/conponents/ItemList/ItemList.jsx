@@ -4,8 +4,6 @@ import { Item } from "../Item/Item";
 
 export const ItemList = ({ productos }) => {
 
-    console.log(productos)
-
     return (
         
         <div className="contenedor d-flex flex-wrap justify-content-center align-items-center gap-3">

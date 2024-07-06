@@ -1,11 +1,9 @@
-import { collection, query, getDocs} from "firebase/firestore"
+import { collection, query, getDocs, doc, getDoc} from "firebase/firestore"
 import { db } from "../firebase/client";
-
 
 
 export const getProducts = async (idCategoria) => {
     
-    const productosFirebase = collection(db, 'productos');
     const q = query(collection(db, "productos"));
     const listadoProductos = [];
 
@@ -28,4 +26,13 @@ export const getProducts = async (idCategoria) => {
 
 
     
+}
+
+export const getProductById = async (id) => {
+    
+    const q = doc(db, "productos", id);
+
+    const querySnapshot = await getDoc(q);
+
+    return {...querySnapshot.data(), id: querySnapshot.id}
 }

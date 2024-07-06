@@ -9,8 +9,16 @@ export const ShopComponentContext = ({children}) => {
     const [cart, setCart] = useState([])
 
     const agregarAlCarrito = (producto) => {
-        setCart([...cart, producto])
-        setCantidad(cantidad + 1)
+        const indice = cart.find(item => item.id === producto.id)
+
+        if (indice !== undefined) {
+            setCart(cart.map(item => item.id === producto.id ? { ...item, Cantidad: item.Cantidad + 1 } : item))
+            setCantidad(cantidad + 1)
+            return
+        }else{
+            setCart([...cart, {...producto, Cantidad: 1}])
+            setCantidad(cantidad + 1)
+        }
     }
 
     const eliminarDelCarrito = (producto) => {
@@ -25,7 +33,7 @@ export const ShopComponentContext = ({children}) => {
     }, [])
 
     return (
-        <ShopContext.Provider value={{ cantidad, agregarAlCarrito, eliminarDelCarrito }}>
+        <ShopContext.Provider value={{ cantidad, agregarAlCarrito, eliminarDelCarrito, cart}}>
             {children}
         </ShopContext.Provider>
     )

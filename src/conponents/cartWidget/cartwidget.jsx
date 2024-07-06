@@ -1,6 +1,9 @@
 import { useContext } from 'react'
 import { Badge, Avatar } from 'antd';
 import { ShopContext } from '../../context/shopContext'
+import { Link } from 'react-router-dom'
+import { BsCartCheck } from "react-icons/bs";
+
 
 const Cartwidget = () => {
 
@@ -9,7 +12,9 @@ const Cartwidget = () => {
     return (
     <>
         <Badge count={cantidad}>
-        <Avatar shape="square" size="large" style={{ backgroundColor: 'yellowgreen' }}/>
+            <Link to="/cart">
+                <BsCartCheck style={{ color: 'greenyellow', fontSize: '35px'}}/>
+            </Link>
         </Badge>
     </>
     )

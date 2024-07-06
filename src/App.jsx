@@ -6,6 +6,9 @@ import ItemDetailContainer from './container/itemDetailContainer/itemDetailConta
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ShopComponentContext } from './context/shopContext'
 
+import Cart from './container/cart/cart'
+import Footer from './conponents/footer/footer'
+
 
 function App() {
 
@@ -19,8 +22,9 @@ function App() {
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/categoria/:idCategoria' element={<ItemListContainer />} />
           <Route path='/productDetail/:id' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
-
+        <Footer />
       </BrowserRouter>
       </ShopComponentContext>  
     </>

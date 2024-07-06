@@ -37,6 +37,33 @@ body{
   margin-left: 10px;
 }
 
+.carrito{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.productos-elegidos{
+  width: 800px;
+  background-color: #212529 !important;
+}
+
+.formulario-orden{
+  width: 600px;
+  background-color: #212529 !important;
+}
+
+.btn-finalizar-compra{
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0px 5px 5px;
+}
+
+.contenedor-inputs{
+  padding: 10px;
+}
+
 
 
 
